@@ -26,7 +26,7 @@ It is recommended to read through the Introduction, basics, patching and annotat
 # Tools
 
 ## DnSpy
-DnSpy is a tool that allows to read .NET assemblies code with ease. Unfortunately Core Keeper is made with the IL2CPP backend. This means we can't use DnSpy itself to view the source code. However it can be useful to view asseblies generated with Cpp2Il.
+DnSpy is a tool that allows to read .NET assemblies code with ease. Unfortunately Core Keeper is made with the IL2CPP backend. This means we can't use DnSpy itself to view the source code. However it can be useful to view assemblies generated with Cpp2Il.
 
 **Important!** If you look for a dnSpy tutorial, most will tell you to look for Assembly-CSharp.dll. This is **NOT** the case with Core Keeper and the relevant DLLs all begin with `Pug` (`Pug.Core`, `Pug.Other` and `PugWorldGen`)
 
