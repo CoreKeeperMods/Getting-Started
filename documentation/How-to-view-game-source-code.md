@@ -4,7 +4,7 @@ Because this game was made using Il2Cpp backend, tools like DnSpy won't give you
 ## Using Cpp2IL
 [Cpp2Il](https://github.com/SamboyCoding/Cpp2IL) can generate .NET assemblies which can be open with DnSpy.
 
-To generate these assemblies you need to use the tool in the coommand line with following options: `.\Cpp2IL.exe --game-path "<path to your core keeper installation>" --just-give-me-dlls-asap-dammit`
+To generate these assemblies you need to use the tool in the command line with following options: `.\Cpp2IL.exe --game-path "<path to your core keeper installation>" --just-give-me-dlls-asap-dammit`
 
 Note that the source code is divided into three assemblies (`Pug.Core`, `Pug.Other` and `PugWorldGen`) and to let Cpp2Il know you want to analyze them you need to use one of these:
 - `--run-analysis-for-assembly <assembly name>`. When using it you will need to run the tool three times and combine the output. 
