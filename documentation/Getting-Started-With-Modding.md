@@ -35,10 +35,6 @@ DnSpy is a tool that allows to read .NET assemblies code with ease. Unfortunatel
 ## Cpp2Il
 Cpp2Il is a tool that attempts to reconstruct game assemblies, such that DnSpy would be able to read them. The tool is currently WIP and does not provide full and accurate output, however it is still useful.
 
-To get correct output make sure to use `--just-give-me-dlls-asap-dammit` command line argument. 
-
-Also note that the source code is divided into three assemblies (`Pug.Core`, `Pug.Other` and `PugWorldGen`) and to let Cpp2Il know you want to analyze them you need to use `--run-analysis-for-assembly <assembly name>` or `--analyze-all` argument. When using `--run-analysis-for-assembly` you will need to run the tool three times and combine the output.
-
 **Link:** https://github.com/SamboyCoding/Cpp2IL
 
 ## Ghidra
