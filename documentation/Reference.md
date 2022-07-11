@@ -29,7 +29,40 @@ Use this boolean to see if the game is in its main loop:
 The normal Unity Input system works so it's possible to assign functionalities to keys that haven't been defined by the game itself. 
 A `Input.GetKeyDown()` in an `Update` method should be enough. 
 
-Core Keeper also has its own InputManager which handles some actions inside the game. Be sure not unintentionally block vanilla actions through your own code. 
+Also [CoreLib](https://github.com/Jrprogrammer/CoreLib) provides an API to add new Rewired keybinds. These keybinds will be rebindable by the user.
+
+In your plugin `Load()` method call:
+```c#
+RewiredKeybinds.AddKeybind("KeyBindUniqueId", "My Key Bind", KeyboardKeyCode.K);
+```
+Then in your MonoBehavior `Update()` method you can check the button:
+```c#
+public class UpdateMono : MonoBehaviour
+{
+    private Player player;
+
+    private void Awake()
+    {
+        RewiredKeybinds.rewiredStart += OnRewiredStart;
+    }
+
+    private void OnRewiredStart()
+    {
+        player = ReInput.players.GetPlayer(0);
+    }
+
+    private void Update()
+    {
+        if (player != null)
+        {
+            if (player.GetButtonDown("KeyBindUniqueId"))
+            {
+                // Do something
+            }
+        }
+    }
+}
+```
 
 # Changing a recipe
 It is possible to change the recipe of an item by changing the `requiredObjectsToCraft` value.
