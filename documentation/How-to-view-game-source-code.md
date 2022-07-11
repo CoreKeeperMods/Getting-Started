@@ -12,7 +12,7 @@ Note that the source code is divided into three assemblies (`Pug.Core`, `Pug.Oth
 
 After running the tool you will see new folder `cpp2il_out`. You can now use DnSpy to read the source code.
 
-# Using Ghidra / IDA
+## Using Ghidra / IDA
 Using a binary reverse engineering tool we can get more precise output. You can use both Ghidra and IDA for this, but since Ghidra is free this guide will be focused on it. 
 
 Unfortunately using these tools alone would also provide bad results. We need to add Il2Cpp metadata (Which contains information about all types, methods and fields) to the Ghidra. To do so we will use [Il2CppDumper](https://github.com/Perfare/Il2CppDumper), in your command line type:
