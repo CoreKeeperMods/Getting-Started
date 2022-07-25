@@ -29,23 +29,23 @@ Create a new file with the name `manifest.json` in the `Packages` folder and pas
 ```json
 {
   "dependencies": {
-    "com.unity.2d.sprite": "1.0.0",
-    "com.unity.dots.editor": "0.12.0-preview.6",
-    "com.unity.entities": "0.17.0-preview.41",
+    "com.unity.2d.sprite": "https://github.com/kremnev8/ModifiedCoreKeeperPackages.git?path=/com.unity.2d.sprite@1.0.0",
+    "com.unity.assetbundlebrowser": "1.7.0",
+    "com.unity.entities": "https://github.com/kremnev8/ModifiedCoreKeeperPackages.git?path=/com.unity.entities@0.17.0-preview.41",
     "com.unity.ide.rider": "2.0.7",
     "com.unity.ide.visualstudio": "2.0.12",
     "com.unity.ide.vscode": "1.2.4",
-    "com.unity.memoryprofiler": "0.6.0-preview.1",
     "com.unity.netcode": "0.6.0-preview.7",
     "com.unity.performance.profile-analyzer": "1.1.1",
-    "com.unity.physics": "0.6.0-preview.3",
+    "com.unity.physics": "https://github.com/kremnev8/ModifiedCoreKeeperPackages.git?path=/com.unity.physics@0.6.0-preview.3",
     "com.unity.platforms": "0.10.0-preview.10",
     "com.unity.postprocessing": "3.2.1",
     "com.unity.profiling.core": "1.0.2",
     "com.unity.rendering.hybrid": "0.11.0-preview.43",
     "com.unity.test-framework": "1.1.29",
-    "com.unity.textmeshpro": "3.0.6",
+    "com.unity.textmeshpro": "https://github.com/kremnev8/ModifiedCoreKeeperPackages.git?path=/com.unity.textmeshpro@3.0.6",
     "com.unity.ugui": "1.0.0",
+    "nuget.mono-cecil": "https://github.com/kremnev8/ModifiedCoreKeeperPackages.git?path=/nuget.mono-cecil@0.1.7",
     "com.unity.modules.ai": "1.0.0",
     "com.unity.modules.androidjni": "1.0.0",
     "com.unity.modules.animation": "1.0.0",
@@ -100,32 +100,17 @@ Open the Unity hub and select the folder you created when exporting the AssetRip
 
 Open the project with Unity version `2020.3.25f1` and wait for it to load. This can take a while. 
 
-Close Unity after it's done loading and the editor is shown.
 
+## Step 5: Adding Script Assemblies
 
+Find the temp folder in where you placed the MonoScripts from earlier. Copy paste all contents from the script **EXCEPT** the following: 
+- Generated assemblies which include `.Generated` in the file 
+- All Unity assemblies which start with `Unity.` (errors will occur due to duplicate assemblies if these are pasted in)
+- `Assembly-CSharp`) 
 
-## Step 5: Changing the meta files
+back into `Assets/MonoScript`.
 
-Place the scripts you temporarily moved into another directory back into the `Assets/MonoScript` folder and start Unity again. 
-
-If Unity asks to upgrade the project files because of deprecated functions click on `Yes, I made a backup`
-
-After that Unity should ask you if you want to enter Safe Mode. Click on yes.
-
-The Editor now loads into the Safe Mode which allows you to fix errors but we're not going to do that. 
-
-In the Unity Asset browser, go to the scripts folder
-
-![image](https://user-images.githubusercontent.com/6024132/160243032-3728fbd0-680b-4b54-8ec2-7172fbc84d58.png)
-
-
-Find every file that starts with `Pug` and click on it to show the inspector. 
-In the inspector **deselect** `General > Auto Reference`
-
-![image](https://user-images.githubusercontent.com/6024132/160243138-cc0baa8a-57e0-4f2b-ad26-f6c984ef0a69.png)
-
-There should be 5 files.
-
+Look into the instructions in `# Utilities-and-helpful-tools` to fix the missing script references.
 
 ## Step 6: Restart Unity
 
@@ -138,4 +123,8 @@ You should now be able to see the assets in the Unity editor.
 
 Enjoy and make some cool stuff.
 
+
+## Utilities and helpful tools
+
+Due to switching Unity.Physics assembly, there will be missing script references. [This tool](https://assetstore.unity.com/packages/tools/utilities/ng-missing-script-recovery-102272) will help with the missing script references. 
 
