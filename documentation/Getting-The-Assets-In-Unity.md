@@ -104,27 +104,9 @@ Close Unity after it's done loading and the editor is shown.
 
 
 
-## Step 5: Changing the meta files
+## Step 5: Removing duplicate assemblies
 
-Place the scripts you temporarily moved into another directory back into the `Assets/MonoScript` folder and start Unity again. 
-
-If Unity asks to upgrade the project files because of deprecated functions click on `Yes, I made a backup`
-
-After that Unity should ask you if you want to enter Safe Mode. Click on yes.
-
-The Editor now loads into the Safe Mode which allows you to fix errors but we're not going to do that. 
-
-In the Unity Asset browser, go to the scripts folder
-
-![image](https://user-images.githubusercontent.com/6024132/160243032-3728fbd0-680b-4b54-8ec2-7172fbc84d58.png)
-
-
-Find every file that starts with `Pug` and click on it to show the inspector. 
-In the inspector **deselect** `General > Auto Reference`
-
-![image](https://user-images.githubusercontent.com/6024132/160243138-cc0baa8a-57e0-4f2b-ad26-f6c984ef0a69.png)
-
-There should be 5 files.
+Find the temp folder in where you placed the MonoScripts from earlier. Copy paste all contents from the script **EXCEPT** the following: (Generated assemblies which include `.Generated` in the file, all unity assemblies which start with `Unity.` (errors will occur due to duplicate assemblies if these are pasted in), and 'Assembly-CSharp') back into `Assets/MonoScript`
 
 
 ## Step 6: Restart Unity
