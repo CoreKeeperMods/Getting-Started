@@ -100,14 +100,17 @@ Open the Unity hub and select the folder you created when exporting the AssetRip
 
 Open the project with Unity version `2020.3.25f1` and wait for it to load. This can take a while. 
 
-Close Unity after it's done loading and the editor is shown.
 
+## Step 5: Adding Script Assemblies
 
+Find the temp folder in where you placed the MonoScripts from earlier. Copy paste all contents from the script **EXCEPT** the following: 
+- Generated assemblies which include `.Generated` in the file 
+- All Unity assemblies which start with `Unity.` (errors will occur due to duplicate assemblies if these are pasted in)
+- `Assembly-CSharp`) 
 
-## Step 5: Removing duplicate assemblies
+back into `Assets/MonoScript`.
 
-Find the temp folder in where you placed the MonoScripts from earlier. Copy paste all contents from the script **EXCEPT** the following: (Generated assemblies which include `.Generated` in the file, all unity assemblies which start with `Unity.` (errors will occur due to duplicate assemblies if these are pasted in), and 'Assembly-CSharp') back into `Assets/MonoScript`
-
+Look into the instructions in `# Utilities-and-helpful-tools` to fix the missing script references.
 
 ## Step 6: Restart Unity
 
@@ -120,4 +123,8 @@ You should now be able to see the assets in the Unity editor.
 
 Enjoy and make some cool stuff.
 
+
+## Utilities and helpful tools
+
+Due to switching Unity.Physics assembly, there will be missing script references. [This tool](https://assetstore.unity.com/packages/tools/utilities/ng-missing-script-recovery-102272) will help with the missing script references. 
 
