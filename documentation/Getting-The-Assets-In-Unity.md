@@ -126,13 +126,15 @@ In the inspector **deselect** `General > Auto Reference`
 
 There should be 5 files.
 
+## Step 6: Remove duplicate scripts in MonoScripts
 
-## Step 6: Restart Unity
+Remove all Unity.* assemblies from the MonoScripts folder (all the duplicate errs shown in unity console)
+
+## Step 7: Restart Unity
 
 Go out of Safe Mode and restart Unity once more to fully get the project assembled.
 
-
-## Step 7: Profit
+## Step 8: Profit
 
 You should now be able to see the assets in the Unity editor.
 
